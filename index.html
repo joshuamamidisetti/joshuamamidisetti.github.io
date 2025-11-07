@@ -116,7 +116,8 @@
 </head>
 <body>
 
-  <div class="sidebar" id="sidebar" onclick="toggleSidebar()">
+  <div class="sidebar">
+  <div class="toggle-btn">☰</div>
     <div class="profile"></div>
     <a href="#about" class="menu-item"><div class="icon"></div><span>About</span></a>
     <a href="#education" class="menu-item"><div class="icon"></div><span>Education</span></a>
@@ -140,9 +141,12 @@
   </div>
 
   <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('expanded');
-    }
-  </script>
+const sidebar = document.querySelector('.sidebar');
+const toggleBtn = document.querySelector('.toggle-btn');
+toggleBtn.addEventListener('click', (event) => {
+  event.stopPropagation();
+  sidebar.classList.toggle('expanded');
+});
+</script>
 </body>
 </html>
